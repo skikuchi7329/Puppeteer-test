@@ -6,12 +6,9 @@ const puppeteer = require('puppeteer');
     slowMo: 500  // 動作確認しやすいようにpuppeteerの操作を遅延させる
   })
   const page = await browser.newPage()
-
-  await page.goto('https://google.com/')
-  await page.type('input[name=q]', '猫', { delay: 100 })
-  await page.click('input[type="submit"]')
-  //await page.waitForSelector('h3 a')
-  await page.screenshot({ path: 'screenshot/sample1.png' })
+  await page.goto('https://twitter.com/i/flow/login')
+  await page.type('input[name="text"]', 'skikuchi7329', {delay: 5000})
+  await page.keyboard.press('Enter')
 
   await browser.close()
 })()
